@@ -1,0 +1,15 @@
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+
+start = root
+root = element xml {p+}
+p = element p {mixed{object+ | location+}*}
+object= element object {type,text}
+
+location= element location {mixed{country | island| landmark|city}}
+type= attribute type {"stone"|"rope"|"wood"}
+
+city = attribute city {"Ise, Japan"}
+country = attribute country {"Japan"}
+island = attribute island {"Honshu, Japan"}
+landmark= attribute landmark {"Shinto Shrine"| "Mount Shimaji"|"shin-no-mihashira"|"Toyouke Shrine"| "Mount Kamiji"|"Imperial Shrine"}
